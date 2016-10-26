@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3073F5D0-AE84-4227-A945-2D764A61C7A9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Models</RootNamespace>
+    <AssemblyName>Models</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiKeys.cs" />
+    <Compile Include="ApiUrl.cs" />
+    <Compile Include="EdamanApiModels\Response\EdamanResponseMapper.cs" />
+    <Compile Include="Geometry.cs" />
+    <Compile Include="HamroFoodApi\Ingredients.cs" />
+    <Compile Include="HamroFoodApi\RestaurantSearchByTextModel.cs" />
+    <Compile Include="NextPageRequest.cs" />
+    <Compile Include="PriceLimit.cs" />
+    <Compile Include="GoogleMapsApiModels\Request\enums.cs" />
+    <Compile Include="GoogleMapsApiModels\Request\GooglePlacesRadarSearchModel.cs" />
+    <Compile Include="GoogleMapsApiModels\Request\GooglePlacesTextSearchModel.cs" />
+    <Compile Include="GoogleMapsApiModels\Response\GooglePlacesTextSearchResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="HamroFoodApi\FoodModel.cs" />
+    <Compile Include="HamroFoodApi\RestaurantResponseModel.cs" />
+    <Compile Include="SpoonacularApiModels\Response\ClassifyCuisine.cs" />
+    <Compile Include="SpoonacularApiModels\Response\SpoonacularComplexSearchResponse.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EdamanApiModels\Request\" />
+    <Folder Include="SpoonacularApiModels\Request\" />
+    <Folder Include="YelpApiModels\Request\" />
+    <Folder Include="YelpApiModels\Response\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
